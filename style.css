@@ -97,7 +97,19 @@ h1{
 .pokedex{
     min-height: 50vh;
     background-image: url(img/pokeball-bg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     color: white;
     display: flex;
+    flex-wrap: wrap;
+}
+
+.pokeCard{
+
+}
+
+.pokemonName{
+    text-transform: capitalize;
 }
 
