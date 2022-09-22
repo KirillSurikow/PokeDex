@@ -1,22 +1,19 @@
+let pokeLexikon = [];
 let currentPokemon;
+let loadLimit = 31;
+let offset = 1;
+let pokedex = document.getElementById('pokedexContainer');
 
 async function loadPokemons() {
-    let url = 'https://pokeapi.co/api/v2/pokemon/charmander';
+   for (let i = offset; i < loadLimit; i++){ 
+    let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
     let response = await fetch(url);
     let currentPokemon = await response.json();
-
-    renderPokemonInfo(currentPokemon);
+    pokeLexikon.push(currentPokemon);
+    renderPokemonCards(i);
+}
 }
 
-function renderPokemonInfo(currentPokemon) {
-    renderPokemonName(currentPokemon);
-    renderPokemonImg(currentPokemon);
-}
-
-function renderPokemonName(currentPokemon){
-    document.getElementById('pokemonName').innerHTML = currentPokemon['name']
-}
-
-function renderPokemonImg(currentPokemon){
-    document.getElementById('pokemonImg').src = currentPokemon['sprites']['front_shiny'];
+async function renderPokemonCards(i){
+    pokedex.innerHTML += /*html*/`<div>${pokeLexikon}[${i}]</div>`
 }

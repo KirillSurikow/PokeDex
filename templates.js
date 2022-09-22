@@ -1,0 +1,3 @@
+function renderPokemonCards(currentPokemon, i){
+    
+}
