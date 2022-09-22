@@ -15,5 +15,6 @@ async function loadPokemons() {
 }
 
 async function renderPokemonCards(i){
-    pokedex.innerHTML += /*html*/`<div>${pokeLexikon}[${i}]</div>`
+    let pokemonName =  pokeLexikon[i]['name'];
+    pokedex.innerHTML += /*html*/`<div>${pokemonName}</div>`
 }
