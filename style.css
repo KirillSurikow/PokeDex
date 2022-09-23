@@ -161,6 +161,7 @@ h1{
     top: 0;
     bottom: 0;
     margin: auto;
+    padding: 15px;
     height: 95vh;
     width: 60vw;
     z-index: 1;
@@ -169,6 +170,117 @@ h1{
 .d-none{
     display: none;
 }
+
+.hideAndDisable{
+    filter: blur(12px);
+    pointer-events: none;
+}
+
+.detailNav{
+    width: 100%;
+    display: flex;
+   
+}
+
+.closeDetailIntervace{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.closeBtn{
+    height: 40px;
+    margin-top: 4px;
+    margin-left: 4px;
+    background-color: rgba(149, 124, 124, 0.4);
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.nextPrev{
+    display: flex;
+    justify-content: space-between;
+}
+
+.previousBtn{
+    height: 40px;
+    width: 40px;
+    margin-top: 4px;
+    margin-right: 4px;
+    background-color: rgba(149, 124, 124, 0.4);
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.nextBtn{
+    height: 40px;
+    width: 40px;
+    margin-top: 4px;
+    margin-right: 4px;
+    background-color: rgba(149, 124, 124, 0.4);
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.headInterface{
+   display: flex;
+   width: 100%;
+}
+
+.headInfo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+    margin-top: 30px;
+}
+
+
+.nameID{
+    margin-bottom: 20px;
+}
+
+.idInterface{
+  color: white;
+  font-size: 22px;
+}
+
+.nameInterface{
+    color: white;
+    text-transform: capitalize;
+    font-size: 30px;
+}
+
+.heightWeight{
+
+}
+
+.measure{
+    color: white;
+    margin-bottom: 10px;
+    border: 2px solid white;
+    padding: 3px;
+    width: 90px;
+    border-radius: 16px;
+}
+
+.imgInterfaceContainer{
+
+}
+
+.imgInterface{
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
