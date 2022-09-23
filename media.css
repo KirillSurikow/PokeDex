@@ -1,0 +1,60 @@
+@media(max-width:790px){
+    .headInterface{
+        flex-direction: column;
+    }
+    .headInfo{
+        flex-direction: row;
+        justify-content: space-evenly;
+        transform: scale(0.75);
+    }
+
+    .imgInterface{
+        max-width: 54%;
+        object-fit: contain;
+    }
+}
+
+@media (max-width:720px){
+    header{
+        flex-direction: column;
+    }
+
+    .logoContainer{
+        align-self: flex-start;
+    }
+
+    .bigSearchContainer{
+        align-self: flex-end;
+    }
+}
+
+@media (max-width:510px){
+    .detailInterface{
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .pokemonImgContainer{
+        width: 100vw;
+    }
+
+    .pokemonImg{
+        max-width:100%;
+    }
+}
+
+@media (max-width:380px){
+    .headInfo{
+        width: 100%;
+    }
+}
+
+@media (max-width:350px){
+    .active{
+        width: 250px;
+    }
+    .search{
+        width: 170px;
+        font-size: 18px;
+    }
+}

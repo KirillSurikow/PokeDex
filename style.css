@@ -197,6 +197,10 @@ h1{
     border-radius: 50%;
 }
 
+.closeBtn:hover{
+    cursor: pointer;
+}
+
 .nextPrev{
     display: flex;
     justify-content: space-between;
@@ -212,6 +216,10 @@ h1{
     border-radius: 50%;
 }
 
+.previousBtn:hover{
+    cursor: pointer;
+}
+
 .nextBtn{
     height: 40px;
     width: 40px;
@@ -222,9 +230,14 @@ h1{
     border-radius: 50%;
 }
 
+.nextBtn{
+    cursor: pointer;
+}
+
 .headInterface{
    display: flex;
    width: 100%;
+   max-height: 50%;
 }
 
 .headInfo{
@@ -265,11 +278,38 @@ h1{
 }
 
 .imgInterfaceContainer{
-
+  display: flex;
+  justify-content: center;
+  width: 100%
 }
 
 .imgInterface{
-  width: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.typeCardContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100%;
+}
+
+.interfaceTypeCard{
+    color: white;
+    font-size: 23px;
+    margin-bottom: 15px;
+    width: 90px;
+}
+
+.pokemonStats{
+    padding-top: 20px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+}
+
+.statName{
+    color: white;
 }
 
 

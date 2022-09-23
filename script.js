@@ -68,7 +68,7 @@ function hideAndDisable(){
     document.getElementById('header').classList.add('hideAndDisable');
 }
 
-function showDetailInterfaceNav(i){
+function showDetailInterfaceNav(){
     let detailInterface = document.getElementById('detailInterface');
     detailInterface.innerHTML += /*html*/`
        <div class="detailNav"> 
@@ -95,7 +95,7 @@ function loadPokemonTypeSingle(i){
     let characteristicsOfPokemon = pokeLexikon[i-1]['types']
     for (j = 0; j < characteristicsOfPokemon.length; j++) {
       let type =  characteristicsOfPokemon[j]['type']['name'];
-      showTypesSingle(i, type);
+      showTypesSingle(type);
     }
 }
 
@@ -104,27 +104,29 @@ function loadPokemonDetailsSingle(i){
     for (j = 0; j < pokemonStats.length; j++){
         let statName = pokemonStats[j]['stat']['name'];
         let statNumber = pokemonStats[j]['base_stat'];
-        showPokemonDetailsSingle(i, statName, statNumber)
+        showPokemonDetailsSingle(i,statName, statNumber);
     }
 }
 
 function showPokemonSingle(i, pokemonName, pokemonImg, pokemonWeight, pokemontHeight){
     let detailInterface = document.getElementById('detailInterface');
-    detailInterface.innerHTML += /*html*/ `
-       <div class="headInterface">
-           <div class="headInfo">
-                 <div class="nameID">
-                     <div class="idInterface">#${i}</div>
-                     <div class="nameInterface">${pokemonName}</div>
-                 </div>
-                 <div class="heightWeight">
-                     <div class="measure">Weight: ${pokemonWeight}</div>
-                     <div class="measure">Height: ${pokemontHeight}</div>
-                 </div>
-            </div>
-            <div class="imgInterfaceContainer"><img class="imgInterface" src="${pokemonImg}"></div>
-        </div>
-        `
+    detailInterface.innerHTML += returnHeadInterfaceHTML(i, pokemonName, pokemonImg, pokemonWeight, pokemontHeight)
 }
+
+function showTypesSingle(type){
+    let typeContainer = document.getElementById('typeCardContainer');
+    typeContainer.innerHTML += /*html*/`<div class="typeCard interfaceTypeCard ${type}">${type}</div>`
+}
+
+function showPokemonDetailsSingle(i,statName, statNumber){
+    let pokemonStats = document.getElementById('pokemonStats');
+    let type = generateTheme(i);
+    pokemonStats.innerHTML += returnPokemonStatsHTML(statName, statNumber,type);
+}
+
+function generateTheme(i){
+    return pokeLexikon[i-1]['types'][0]['type']['name'];
+}
+
 
 
