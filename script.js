@@ -51,7 +51,7 @@ let loadMorePokemons = async () => {
 }
 
 function showDetails(i){
-   showDetailInterface();
+   showDetailInterface(i);
    hideAndDisable();
    showDetailInterfaceNav(i);
    loadPokemonSingle(i);
@@ -68,19 +68,9 @@ function hideAndDisable(){
     document.getElementById('header').classList.add('hideAndDisable');
 }
 
-function showDetailInterfaceNav(){
+function showDetailInterfaceNav(i){
     let detailInterface = document.getElementById('detailInterface');
-    detailInterface.innerHTML += /*html*/`
-       <div class="detailNav"> 
-          <div class="closeDetailIntervace">
-             <img class="closeBtn" src="img/close.png" alt="close">
-          </div>
-          <div class="nextPrev">
-             <img class="previousBtn" src="img/previous.png" alt="previous">
-             <img class="nextBtn" src="img/next.png" alt="next">
-          </div>
-       </div>
-        `
+    detailInterface.innerHTML = returnDetailInterfaceNavHTML(i) 
 }
 
 function loadPokemonSingle(i){
@@ -126,6 +116,28 @@ function showPokemonDetailsSingle(i,statName, statNumber){
 
 function generateTheme(i){
     return pokeLexikon[i-1]['types'][0]['type']['name'];
+}
+
+function closeDetailInterface(i){
+    document.getElementById('detailInterface').classList.add('d-none')
+    removeHideAndDisable();
+    clearTypesContainer(i);
+    clearStats();
+}
+
+function removeHideAndDisable(){
+    document.getElementById('pokedex').classList.remove('hideAndDisable');
+    document.getElementById('header').classList.remove('hideAndDisable');
+}
+
+function clearTypesContainer(i){
+   let typesContainer = document.getElementById(`pokemonTypeContainer${i}`);
+   typesContainer.innerHTML ='';
+}
+
+function clearStats(){
+    let stats = document.getElementById('pokemonStats');
+    stats.innerHTML = '';
 }
 
 

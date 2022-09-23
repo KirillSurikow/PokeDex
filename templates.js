@@ -42,3 +42,17 @@ function returnPokemonStatsHTML(statName, statNumber,type){
         <div class="progress-bar ${type}" role="progressbar" style="width: ${statNumber}%">${statNumber}</div>
     </div>`
 }
+
+function returnDetailInterfaceNavHTML(i){
+    return /*html*/`
+    <div class="detailNav"> 
+       <div class="closeDetailIntervace">
+          <img onclick="closeDetailInterface(${i})" class="closeBtn" src="img/close.png" alt="close">
+       </div>
+       <div class="nextPrev">
+          <img onclick="previousPokemon(${i}) "class="previousBtn" src="img/previous.png" alt="previous">
+          <img onclick="nextPokemon(${i})"class="nextBtn" src="img/next.png" alt="next">
+       </div>
+    </div>
+     `
+}
