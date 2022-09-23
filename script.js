@@ -57,6 +57,7 @@ function showDetails(i){
    loadPokemonSingle(i);
    loadPokemonTypeSingle(i)
    loadPokemonDetailsSingle(i);
+   preventScrolling();
 }
 
 function showDetailInterface(){
@@ -98,6 +99,10 @@ function loadPokemonDetailsSingle(i){
     }
 }
 
+function preventScrolling(){
+    document.body.style.overflow = 'hidden';
+}
+
 function showPokemonSingle(i, pokemonName, pokemonImg, pokemonWeight, pokemontHeight){
     let detailInterface = document.getElementById('detailInterface');
     detailInterface.innerHTML += returnHeadInterfaceHTML(i, pokemonName, pokemonImg, pokemonWeight, pokemontHeight)
@@ -123,6 +128,11 @@ function closeDetailInterface(i){
     removeHideAndDisable();
     clearTypesContainer(i);
     clearStats();
+    activateScrolling();
+}
+
+function activateScrolling(){
+    document.body.style.overflow = 'visible';
 }
 
 function removeHideAndDisable(){
@@ -131,13 +141,23 @@ function removeHideAndDisable(){
 }
 
 function clearTypesContainer(i){
-   let typesContainer = document.getElementById(`pokemonTypeContainer${i}`);
+   let typesContainer = document.getElementById(`typeCardContainer${i}`);
    typesContainer.innerHTML ='';
 }
 
 function clearStats(){
     let stats = document.getElementById('pokemonStats');
     stats.innerHTML = '';
+}
+
+function nextPokemon(i){
+    i++;
+   showDetails(i);
+}
+
+function previousPokemon(i){
+    i--;
+    showDetails(i);
 }
 
 

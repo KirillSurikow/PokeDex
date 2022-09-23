@@ -106,6 +106,7 @@ h1{
     color: white;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 
@@ -165,6 +166,10 @@ h1{
     height: 95vh;
     width: 60vw;
     z-index: 1;
+}
+
+.preventScroll{
+    overflow: hidden;
 }
 
 .d-none{
