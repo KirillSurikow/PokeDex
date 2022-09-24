@@ -33,9 +33,20 @@ function searchPokemon() {
         if (pokemonName.toLowerCase().includes(search)) {
             renderPokemonCards(i+1);
         }
-        // else{
-        //     renderPokemonCards(i+1);
-        // }
+    }
+}
+
+function deleteSearch(){
+    let search = document.getElementById('search');
+    let pokedex = document.getElementById('pokedex');
+    search.value = "";
+    pokedex.innerHTML = "";
+    refillPokedex();
+}
+
+function refillPokedex(){
+    for (let i = 1; i <= pokeLexikon.length; i++){
+        renderPokemonCards(i);
     }
 }
 
