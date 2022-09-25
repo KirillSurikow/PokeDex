@@ -2,6 +2,7 @@ let pokeLexikon = [];
 let currentPokemon;
 let loadLimit = 31;
 let offset = 1;
+let isLoading = false;
 
 
 async function loadPokemons() {
@@ -12,7 +13,9 @@ async function loadPokemons() {
         pokeLexikon.push(currentPokemon);
         renderPokemonCards(i);
     }
-    window.addEventListener('scroll', loadMorePokemons);
+    if (isLoading == false) {
+        window.addEventListener('scroll', loadMorePokemons);
+    }
 }
 
 async function renderPokemonCards(i) {
@@ -31,12 +34,12 @@ function searchPokemon() {
     for (let i = 0; i < pokeLexikon.length; i++) {
         let pokemonName = pokeLexikon[i]['name'];
         if (pokemonName.toLowerCase().includes(search)) {
-            renderPokemonCards(i+1);
+            renderPokemonCards(i + 1);
         }
     }
 }
 
-function deleteSearch(){
+function deleteSearch() {
     let search = document.getElementById('search');
     let pokedex = document.getElementById('pokedex');
     search.value = "";
@@ -44,8 +47,8 @@ function deleteSearch(){
     refillPokedex();
 }
 
-function refillPokedex(){
-    for (let i = 1; i <= pokeLexikon.length; i++){
+function refillPokedex() {
+    for (let i = 1; i <= pokeLexikon.length; i++) {
         renderPokemonCards(i);
     }
 }
@@ -65,12 +68,14 @@ function renderTypes(i, type) {
 
 let loadMorePokemons = async () => {
     if (window.scrollY + window.innerHeight >= document.body.clientHeight) {
+        isLoading = true;
         for (let i = loadLimit; i < loadLimit + 31; i++) {
             let url = `https://pokeapi.co/api/v2/pokemon/${i}`;
             let response = await fetch(url);
             let currentPokemon = await response.json();
             pokeLexikon.push(currentPokemon);
             renderPokemonCards(i);
+            isLoading = false;
         }
         loadLimit += 30;
         offset += 30;
