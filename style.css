@@ -11,6 +11,7 @@ header{
     position: sticky;
     top: 0;
     left: 0;
+    z-index: 1;
     background-color: lightgray;
     display: flex;
     justify-content: space-evenly ;
@@ -105,7 +106,7 @@ h1{
     background-image: url(img/pokeball-bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-attachment: fixed;
+    background-attachment: fixed;    /*so bleibt der Hintergrund stehen*/ 
     color: white;
     display: flex;
     flex-wrap: wrap;
@@ -141,7 +142,7 @@ h1{
 }
 
 .pokemonName{
-    text-transform: capitalize;
+    text-transform: capitalize;  /*ersten Buchstaben groß schreiben*/ 
 }
 
 .typeCard{
@@ -160,7 +161,7 @@ h1{
     background-color: rgba(23,31,40,0.95);
     opacity: 0.7;
     position: fixed;
-    left: 0;
+    left: 0;               /*mit dieser Methode centert man ein absolut gesetztes Element */ 
     right: 0;
     top: 0;
     bottom: 0;
@@ -173,7 +174,7 @@ h1{
 }
 
 .preventScroll{
-    overflow: hidden;
+    overflow: hidden;         /*mit overflow hidden kann man den Body nicht mehr scrollbar machen*/ 
 }
 
 .d-none{

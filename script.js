@@ -13,9 +13,9 @@ async function loadPokemons() {                            /*Pokemons werden mit
         pokeLexikon.push(currentPokemon);                        /*In ein Array gepusht*/ 
         renderPokemonCards(i);
     }
-    if (isLoading == false) {
+  
         window.addEventListener('scroll', loadMorePokemons);         /*If Abfrage soll Zu schnelles Scrollen soll Dopplungseffekt beim rendern verhindern*/ 
-    }
+    
 }
 
 async function renderPokemonCards(i) {                /*Einfaches rendern*/ 
