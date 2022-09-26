@@ -58,3 +58,11 @@
         font-size: 18px;
     }
 }
+
+/*Holding SmartPhone Horizontally*/
+
+@media (max-heigth:650px){
+   .detailInterface{
+    overflow-y: auto;
+   }
+}

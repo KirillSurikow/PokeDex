@@ -13,9 +13,9 @@ async function loadPokemons() {                            /*Pokemons werden mit
         pokeLexikon.push(currentPokemon);                        /*In ein Array gepusht*/ 
         renderPokemonCards(i);
     }
-  
+    if (isLoading == false) {
         window.addEventListener('scroll', loadMorePokemons);         /*If Abfrage soll Zu schnelles Scrollen soll Dopplungseffekt beim rendern verhindern*/ 
-    
+    }
 }
 
 async function renderPokemonCards(i) {                /*Einfaches rendern*/ 
@@ -69,7 +69,7 @@ function renderTypes(i, type) {
 let loadMorePokemons = async () => {                         /*man lädt beim Scrollen weitere Pokemons runter*/ 
     if (window.scrollY + window.innerHeight >= document.body.clientHeight - 100 && !isLoading) {    /*wenn die gescrollten pixel zusammen mit einer Bildschirmhöhe die Höhe des Bodys übertreffen und die Boolische Variable false ist*/ 
         isLoading = true;                                                     /*setze den Boolischen Wert für die Dauer der Ladezeit auf true*/ 
-        for (let i = loadLimit; i < loadLimit + 31; i++) {             /*setze für die Schleife das Offset auf das vorherige Ladelimit und Erhöhe das Ladelimit um den Betrag des vorherigen Ladelimits*/ 
+        for (let i = loadLimit; i < loadLimit + 30; i++) {             /*setze für die Schleife das Offset auf das vorherige Ladelimit und Erhöhe das Ladelimit um den Betrag des vorherigen Ladelimits*/ 
             let url = `https://pokeapi.co/api/v2/pokemon/${i}`;       
             let response = await fetch(url);
             let currentPokemon = await response.json();
