@@ -12,6 +12,11 @@
         max-width: 54%;
         object-fit: contain;
     }
+
+    .measureAndTypeContainer{
+        display: flex;
+        align-items: center;
+    }
 }
 
 @media (max-width:720px){
@@ -61,8 +66,38 @@
 
 /*Holding SmartPhone Horizontally*/
 
-@media (max-heigth:650px){
+@media (max-height:650px){
    .detailInterface{
     overflow-y: auto;
+   }
+
+   .headInterface{
+    flex-direction: row;
+   }
+
+   .headInfo{
+    flex-direction:column ;
+   }
+
+   .header{
+    display: flex;
+    padding: 5px;
+    flex-direction: row;
+    align-items: center;
+   }
+
+   .pokeCard{
+    display: flex;
+    align-items: center;
+    width: 33%;
+   }
+
+   .pokemonTypeContainer{
+     display: flex;
+     flex-direction: column;
+   }
+
+   .pokemonImg{
+    width: 100%;
    }
 }

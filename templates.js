@@ -14,7 +14,7 @@ function returnPokemonCardHTML(i, pokemonName, pokemonImg) {
     `
 }
 
-function returnHeadInterfaceHTML(i, pokemonName, pokemonImg, pokemonWeight, pokemontHeight){
+function returnHeadInterfaceHTML(i, pokemonName, pokemonImg, pokemonWeight, pokemontHeight) {
     return /*html*/ `
     <div class="headInterface">
         <div class="headInfo">
@@ -22,11 +22,13 @@ function returnHeadInterfaceHTML(i, pokemonName, pokemonImg, pokemonWeight, poke
                   <div class="idInterface">#${i}</div>
                   <div class="nameInterface">${pokemonName}</div>
               </div>
-              <div class="heightWeight">
-                  <div class="measure">Weight: ${pokemonWeight}</div>
-                  <div class="measure">Height: ${pokemontHeight}</div>
-              </div>
-              <div class="typeCardContainer" id="typeCardContainer">
+              <div class="measureAndTypeContainer">
+                  <div class="heightWeight">
+                      <div class="measure">Weight: ${pokemonWeight}</div>
+                      <div class="measure">Height: ${pokemontHeight}</div>
+                  </div>
+                  <div class="typeCardContainer" id="typeCardContainer">
+                  </div>
               </div>
          </div>
          <div class="imgInterfaceContainer"><img class="imgInterface" src="${pokemonImg}"></div>
@@ -35,7 +37,7 @@ function returnHeadInterfaceHTML(i, pokemonName, pokemonImg, pokemonWeight, poke
      `
 }
 
-function returnPokemonStatsHTML(statName, statNumber,type){
+function returnPokemonStatsHTML(statName, statNumber, type) {
     return /*html*/`
     <div class= "statName">${statName}</div>
     <div class="progress">
@@ -43,7 +45,7 @@ function returnPokemonStatsHTML(statName, statNumber,type){
     </div>`
 }
 
-function returnDetailInterfaceNavHTML(i){
+function returnDetailInterfaceNavHTML(i) {
     return /*html*/`
     <div class="detailNav"> 
        <div class="closeDetailIntervace">
